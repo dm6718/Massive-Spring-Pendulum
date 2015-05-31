@@ -1,2 +1,2 @@
 # Massive-Spring-Pendulum
-Code that animates a spring pendulum system where the mass of the spring is taken into account.  Motion is constrained to a plane, the spring is restricted to compressive deformation (does not bend), and damping is neglected.  The Euler Lagrange method is used to derive the equations of motion and The Python SciPy ODE solver is used to numerically evaluate those equations.
+Code that animates a spring pendulum system where the mass of the spring is taken into account.  Motion is constrained to a plane, the spring is restricted to compressive deformation (does not bend), and damping is neglected.  The Euler Lagrange method is used to derive the equations of motion and the Python SciPy ODE solver is used to numerically evaluate those equations.
