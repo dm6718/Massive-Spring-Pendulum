@@ -2,14 +2,17 @@ import numpy as np
 from scipy.integrate import odeint
 from numpy import sin, cos, pi, array
 
+#Create spring dictionary
 spring = {
     'm'     :   1.0,      # Mass of spring in kg
     'k'     :   1.0e3,  # Spring constant Nm^-1
     'l'     :   3.0e-2  # Rest length in m
     }
 
+#Specify mass of attachment
 mass = 1.0  # Mass of attachment in kg
 
+#Specify initial conditions
 init = array([pi/2, 0, mass*9.8/spring['k'], 0]) # initial values
       #array([theta, theta_dot, x, x_dot])
 
