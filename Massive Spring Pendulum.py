@@ -16,7 +16,8 @@ mass = 1.0  # Mass of attachment in kg
 init = array([pi/2, 0, mass*9.8/spring['k'], 0]) # initial values
       #array([theta, theta_dot, x, x_dot])
 
-def deriv(z, t, spring, mass): # return derivatives of the array y
+#Return derivatives of the array z (= [theta, theta_dot, x, x_dot])
+def deriv(z, t, spring, mass):
     m = spring['m']
     k = spring['k']
     l = spring['l']
@@ -30,8 +31,10 @@ def deriv(z, t, spring, mass): # return derivatives of the array y
         (l+z[2])*z[1]**2+(m/2+M)/(m/3+M)*g*cos(z[0])-1.0/(m/3+M)*k*z[2]
         ])
 
-
+#Create time steps
 time = np.linspace(0.0,10.0,1000)
+
+#Numerically solve ODE
 y = odeint(deriv,init,time, args = (spring, mass))
 
 ##############################################################################
@@ -76,5 +79,4 @@ def animate(i):
 ani = animation.FuncAnimation(fig, animate, np.arange(1, len(y)),
     interval=25, blit=True, init_func=init)
 
-#ani.save('double_pendulum.mp4', fps=15)
 plt.show()
